@@ -1,0 +1,212 @@
+   <!-- Opciones de compra siempre en horizontal -->
+    <div class="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+        <div id="option1" class="option-card border-2 rounded-lg p-2 sm:p-3 text-center selected">
+            <div class="font-medium text-xs sm:text-sm">Compra una unidad</div>
+            <div class="text-base sm:text-lg font-bold text-indigo-600">S/109.00</div>
+            <input type="radio" name="purchase_option" value="1 unidad - S/109.00" class="hidden" checked data-price="109.00">
+        </div>
+        <div id="option2" class="option-card border-2 rounded-lg p-2 sm:p-3 text-center">
+            <div class="font-medium text-xs sm:text-sm">Compra 2 unidades</div>
+            <div class="text-base sm:text-lg font-bold text-indigo-600">S/179.00</div>
+            <input type="radio" name="purchase_option" value="2 unidades - S/179.00" class="hidden" data-price="179.00">
+        </div>
+    </div>
+    
+    <!-- NOTA: Debes reemplazar "TU_ID_DE_FORMULARIO" con el ID real de tu formulario de Google -->
+    <form id="registrationForm" class="space-y-4" target="_blank" action="https://docs.google.com/forms/d/e/TU_ID_DE_FORMULARIO/formResponse" method="POST">
+        <div class="space-y-3">
+            <div>
+                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                <input type="text" id="nombre" name="entry.XXXXX1" required 
+                    class="input-field w-full px-3 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none transition-all duration-200"
+                    placeholder="Ingrese su nombre completo">
+            </div>
+            
+            <div>
+                <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+                <div class="flex">
+                    <span class="inline-flex items-center px-3 text-gray-500 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg">
+                        +51
+                    </span>
+                    <input type="tel" id="whatsapp" name="entry.XXXXX2" required 
+                        class="input-field w-full px-3 py-2 sm:py-3 rounded-r-lg border border-gray-300 focus:outline-none transition-all duration-200"
+                        placeholder="912345678" inputmode="numeric" pattern="[0-9]*">
+                </div>
+            </div>
+            
+            <div>
+                <label for="departamento" class="block text-sm font-medium text-gray-700 mb-1">Departamento</label>
+                <select id="departamento" name="entry.XXXXX3" required 
+                    class="input-field w-full px-3 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none transition-all duration-200 bg-white">
+                    <option value="" disabled selected>Seleccione un departamento</option>
+                    <option value="amazonas">Amazonas</option>
+                    <option value="ancash">Áncash</option>
+                    <option value="apurimac">Apurímac</option>
+                    <option value="arequipa">Arequipa</option>
+                    <option value="ayacucho">Ayacucho</option>
+                    <option value="cajamarca">Cajamarca</option>
+                    <option value="callao">Callao</option>
+                    <option value="cusco">Cusco</option>
+                    <option value="huancavelica">Huancavelica</option>
+                    <option value="huanuco">Huánuco</option>
+                    <option value="ica">Ica</option>
+                    <option value="junin">Junín</option>
+                    <option value="la_libertad">La Libertad</option>
+                    <option value="lambayeque">Lambayeque</option>
+                    <option value="lima">Lima</option>
+                    <option value="loreto">Loreto</option>
+                    <option value="madre_de_dios">Madre de Dios</option>
+                    <option value="moquegua">Moquegua</option>
+                    <option value="pasco">Pasco</option>
+                    <option value="piura">Piura</option>
+                    <option value="puno">Puno</option>
+                    <option value="san_martin">San Martín</option>
+                    <option value="tacna">Tacna</option>
+                    <option value="tumbes">Tumbes</option>
+                    <option value="ucayali">Ucayali</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="provincia" class="block text-sm font-medium text-gray-700 mb-1">Provincia</label>
+                <input type="text" id="provincia" name="entry.XXXXX4" required 
+                    class="input-field w-full px-3 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none transition-all duration-200"
+                    placeholder="Ingrese su provincia">
+            </div>
+            
+            <div>
+                <label for="distrito" class="block text-sm font-medium text-gray-700 mb-1">Distrito</label>
+                <input type="text" id="distrito" name="entry.XXXXX5" required 
+                    class="input-field w-full px-3 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none transition-all duration-200"
+                    placeholder="Ingrese su distrito">
+            </div>
+            
+            <div>
+                <label for="direccion" class="block text-sm font-medium text-gray-700 mb-1">Dirección</label>
+                <input type="text" id="direccion" name="entry.XXXXX6" required 
+                    class="input-field w-full px-3 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none transition-all duration-200"
+                    placeholder="Ingrese su dirección completa">
+            </div>
+            
+            <!-- Campo oculto para la opción de compra -->
+            <input type="hidden" id="selectedOption" name="entry.XXXXX7" value="1 unidad - S/109.00">
+        </div>
+        
+        <div class="space-y-1 pt-1">
+            <button type="submit" id="submitButton" class="submit-button w-full text-white font-medium py-2 sm:py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center text-base">
+                <span id="buttonText">Confirmar mi pedido - S/109.00</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            
+            <div class="text-center text-green-600 font-medium free-shipping flex items-center justify-center py-1 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1v-5h2.05a2.5 2.5 0 014.9 0H19a1 1 0 001-1v-4a1 1 0 00-.293-.707l-2-2A1 1 0 0017 2h-3a1 1 0 00-1 1v1H3z" />
+                </svg>
+                Envío Gratis
+            </div>
+        </div>
+    </form>
+    
+    <!-- Mensaje de éxito (oculto por defecto) -->
+    <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+        ¡Pedido enviado con éxito! Nos pondremos en contacto con usted pronto para coordinar la entrega.
+    </div>
+</div>
+
+<script>
+    // Manejar la selección de opciones de compra
+    const option1 = document.getElementById('option1');
+    const option2 = document.getElementById('option2');
+    const radio1 = option1.querySelector('input[type="radio"]');
+    const radio2 = option2.querySelector('input[type="radio"]');
+    const buttonText = document.getElementById('buttonText');
+    const submitButton = document.getElementById('submitButton');
+    const selectedOptionField = document.getElementById('selectedOption');
+    
+    // Función para actualizar el botón según la opción seleccionada
+    function updateButton(price, optionValue) {
+        buttonText.textContent = `Confirmar mi pedido - S/${price}`;
+        selectedOptionField.value = optionValue;
+        
+        // Efecto visual para el cambio de precio
+        submitButton.classList.add('bg-green-500');
+        setTimeout(() => {
+            submitButton.classList.remove('bg-green-500');
+            submitButton.classList.add('bg-green-600');
+        }, 300);
+    }
+    
+    option1.addEventListener('click', function() {
+        option1.classList.add('selected');
+        option2.classList.remove('selected');
+        radio1.checked = true;
+        radio2.checked = false;
+        updateButton(radio1.dataset.price, radio1.value);
+    });
+    
+    option2.addEventListener('click', function() {
+        option2.classList.add('selected');
+        option1.classList.remove('selected');
+        radio2.checked = true;
+        radio1.checked = false;
+        updateButton(radio2.dataset.price, radio2.value);
+    });
+    
+    // Validación del formulario antes de enviar
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        // Validación básica
+        const nombre = document.getElementById('nombre').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const departamento = document.getElementById('departamento').value;
+        const provincia = document.getElementById('provincia').value;
+        const distrito = document.getElementById('distrito').value;
+        const direccion = document.getElementById('direccion').value;
+        
+        if (!nombre || !whatsapp || !departamento || !provincia || !distrito || !direccion) {
+            e.preventDefault();
+            alert('Por favor complete todos los campos');
+            return false;
+        }
+        
+        // Validación del número de WhatsApp (solo números y longitud adecuada)
+        const whatsappRegex = /^\d{9}$/;
+        if (!whatsappRegex.test(whatsapp)) {
+            e.preventDefault();
+            alert('Por favor ingrese un número de WhatsApp válido (9 dígitos)');
+            return false;
+        }
+        
+        // Mostrar mensaje de éxito (opcional, ya que el formulario se enviará a Google)
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        // Puedes descomentar esto si quieres mostrar el mensaje de éxito en la misma página
+        /*
+        e.preventDefault();
+        form.classList.add('opacity-50', 'pointer-events-none');
+        setTimeout(() => {
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('block');
+        }, 1000);
+        */
+    });
+    
+    // Mejora para teclado numérico en móviles
+    document.getElementById('whatsapp').addEventListener('focus', function() {
+        this.setAttribute('inputmode', 'numeric');
+    });
+    
+    // Prevenir zoom en iOS al enfocar inputs
+    const allInputs = document.querySelectorAll('input, select');
+    allInputs.forEach(input => {
+        input.addEventListener('touchstart', e => {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+    });
+</scrip
